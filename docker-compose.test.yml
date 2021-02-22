@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  getir-case-study:
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: getir-case-study${TAG:-latest}
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+    links:
+      - mongodb
+    environment:
+      DEBUG: "${DEBUG}"
+      RECORD_DB_URL: "mongodb://mongodb/test-docker"
+      WAIT_HOSTS_TIMEOUT: 300
+      WAIT_SLEEP_INTERVAL: 30
+      WAIT_HOST_CONNECT_TIMEOUT: 30
+    ports:
+      - "5071:5071"
+    volumes:
+      - .:/home/node/app/getir-case-study
+      - node_modules:/home/node/app/getir-case-study/node_modules
+    networks:
+      - app-network
+    command: sh -c "/wait && npm test"
+
+  mongodb:
+    image: mongo:4.1.8-xenial
+    restart: unless-stopped
+    volumes:
+      - dbdata:/data/db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+  node_modules:

@@ -1,0 +1,7 @@
+version: "3"
+services:
+  getir-case-study:
+    volumes:
+      - ${PWD}:/home/node/app
+    environment:
+      WATCH: "true"
