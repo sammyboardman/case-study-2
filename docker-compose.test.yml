@@ -5,15 +5,10 @@ services:
     build:
       context: .
       dockerfile: dockerfile
-    image: getir-case-study${TAG:-latest}
+    image: getir-case-study-test${TAG:-latest}
     restart: unless-stopped
-    depends_on:
-      - mongodb
-    links:
-      - mongodb
     environment:
-      DEBUG: "${DEBUG}"
-      RECORD_DB_URL: "mongodb://mongodb/test-docker"
+      RECORD_DB_URL: "mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true"
       WAIT_HOSTS_TIMEOUT: 300
       WAIT_SLEEP_INTERVAL: 30
       WAIT_HOST_CONNECT_TIMEOUT: 30
@@ -25,15 +20,6 @@ services:
     networks:
       - app-network
     command: sh -c "/wait && npm test"
-
-  mongodb:
-    image: mongo:4.1.8-xenial
-    restart: unless-stopped
-    volumes:
-      - dbdata:/data/db
-    networks:
-      - app-network
-
 networks:
   app-network:
     driver: bridge

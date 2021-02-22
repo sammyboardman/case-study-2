@@ -37,6 +37,7 @@
     "express-rate-limit": "^5.2.6",
     "helmet": "^4.4.1",
     "joi": "^17.4.0",
+    "moment": "^2.29.1",
     "mongoose": "^5.11.17",
     "morgan": "^1.10.0",
     "swagger-ui-express": "^4.1.6",

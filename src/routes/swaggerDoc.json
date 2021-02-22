@@ -1,0 +1,101 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Case Study",
+      "description": "A RESTful API with a single endpoint that fetches the data in the provided MongoDB collection and return the results in the requested format",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "locahost:5100/api/v1"
+      }
+    ],
+    "paths": {
+      "/fetch-records": {
+        "post": {
+          "description": "fetch records based on sum of counts and createdAt",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "endDate",
+                    "maxCount",
+                    "minCount",
+                    "startDate"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "startDate": {
+                      "type": "string",
+                      "example": "2016-01-26"
+                    },
+                    "endDate": {
+                      "type": "string",
+                      "example": "2018-02-02"
+                    },
+                    "minCount": {
+                      "type": "integer",
+                      "example": 2800
+                    },
+                    "maxCount": {
+                      "type": "integer",
+                      "example": 2900
+                    }
+                  }
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "400": {
+              "description": "Bad Request"
+            },
+            "200": {
+              "description": "Successful Transaction",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "number",
+                        "example": 0
+                      },
+                      "msg": {
+                        "type": "string",
+                        "example": "Success"
+                      },
+                      "records": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "key": {
+                              "type": "string",
+                              "example": "KYKAKxDr"
+                            },
+                            "createdAt": {
+                              "type": "string",
+                              "example": "2016-11-27T00:30:34.725Z"
+                            },
+                            "totalCount": {
+                              "type": "integer",
+                              "example": 2713
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  
