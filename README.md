@@ -5,9 +5,9 @@
 * Node.js
 * Express.js
 * Mongoose.js
+* Jest -for test
 * Docker - for containerization
 * AWS for deployment
-
 
 
 ### Endpoint
@@ -31,17 +31,23 @@ $ npm run docker:start
 
 > Test app
 ```
-$ npm run docker:build
 $ npm run docker:test
 ```
-
+### How to tail the running instance
+```
+$ npm run docker:tail
+```
+### How to stop the running instance
+```
+$ npm run docker:stop
+```
 ##### Without Docker
 _ Node 10 > needs to be installed
 > Clone Repo
 ```
 $ git clone https://github.com/sammyboardman/case-study-2.git
 
-$ case-study-2
+$ cd case-study-2
 ```
 > Install dependencies
 ```

@@ -8,7 +8,6 @@ services:
     image: getir-case-study${TAG:-latest}
     restart: unless-stopped
     environment:
-      DEBUG: "${DEBUG}"
       RECORD_DB_URL: "mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true"
       WAIT_HOSTS_TIMEOUT: 300
       WAIT_SLEEP_INTERVAL: 30
@@ -18,12 +17,7 @@ services:
     volumes:
       - .:/home/node/app/getir-case-study
       - node_modules:/home/node/app/getir-case-study/node_modules
-    networks:
-      - app-network
-    command: sh -c "/wait && npm start"
-networks:
-  app-network:
-    driver: bridge
+    command: sh -c "npm start"
 
 volumes:
   dbdata:

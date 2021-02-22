@@ -14,7 +14,6 @@
     "docker:stop": "docker-compose -f ./docker-compose.dev.yml down",
     "docker:tail": "docker-compose -f ./docker-compose.dev.yml logs -f getir-case-study",
     "docker:watch": "docker-compose -f ./docker-compose.dev.yml -f ./docker-compose.watch.yml up || true",
-    "docker:debug": "DEBUG=true npm run docker:start",
     "lint": "eslint --ext js ",
     "precommit": "npm run lint",
     "prepush": "npm run test"
@@ -37,7 +36,6 @@
     "express-rate-limit": "^5.2.6",
     "helmet": "^4.4.1",
     "joi": "^17.4.0",
-    "moment": "^2.29.1",
     "mongoose": "^5.11.17",
     "morgan": "^1.10.0",
     "swagger-ui-express": "^4.1.6",

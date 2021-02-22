@@ -17,13 +17,7 @@ services:
     volumes:
       - .:/home/node/app/getir-case-study
       - node_modules:/home/node/app/getir-case-study/node_modules
-    networks:
-      - app-network
-    command: sh -c "/wait && npm test"
-networks:
-  app-network:
-    driver: bridge
-
+    command: sh -c "npm test"
 volumes:
   dbdata:
   node_modules:

@@ -1,4 +1,3 @@
-const { logger } = require('./logger');
 const {
   ERROR_NOT_FOUND,
   VALIDATION_ERROR,
