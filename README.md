@@ -57,7 +57,7 @@ $ npm start
 ```
 $ npm run test
 ```
-> POST `http://3.19.53.172/api/v1/fetch-records`
+> POST `http://getir.devprofile.io:3000/api/v1/fetch-records`
 ```
 Request body
 {
@@ -67,8 +67,20 @@ Request body
  "maxCount": 3000
 }
 ```
-### Documentation
-GET `http://3.19.53.172/documentation`
+```
+Sample Response
+{
+"code":0, "msg":"Success", 
+"records":[
+{
+"key":"TAKwGc6Jr4i8Z487",
+"createdAt":"2017-01-28T01:22:14.398Z",
+"totalCount":2800
+} ]
+}
+```
+### Swagger Documentation
+GET `http://getir.devprofile.io:3000/api/v1/documentation/`
 
 ### Deployment
-This API has been deployed on AWS (with docker) @ `http://3.19.53.172/`
+This API has been deployed on AWS (with docker) @ `http://getir.devprofile.io:3000/api/v1/fetch-records`
