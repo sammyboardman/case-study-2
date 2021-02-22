@@ -1,4 +1,4 @@
-<h2 align="center">Case Study</h2>
+<h2 align="left">Case Study</h2>
 
 ### Stacks Used
 
@@ -68,7 +68,7 @@ Request body
 }
 ```
 ```
-Sample Response
+Sample Success Response
 {
 "code":0, "msg":"Success", 
 "records":[
@@ -77,6 +77,14 @@ Sample Response
 "createdAt":"2017-01-28T01:22:14.398Z",
 "totalCount":2800
 } ]
+}
+```
+```
+Sample Error Response
+{
+    "code": 99,
+    "msg": "Request Failed",
+    "issue": "endDate failed custom validation because The date format is invalid! It should be in this format \"YYYY-MM-DD\"" 
 }
 ```
 ### Swagger Documentation
