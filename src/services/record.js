@@ -6,14 +6,10 @@ const getRecords = ({
   const query = [
     {
       $match: {
-        $and: [
-          {
-            createdAt: {
-              $gte: new Date(startDate),
-              $lte: new Date(endDate),
-            },
-          },
-        ],
+        createdAt: {
+          $gte: new Date(startDate),
+          $lte: new Date(endDate),
+        },
       },
     },
     {
@@ -25,14 +21,10 @@ const getRecords = ({
     },
     {
       $match: {
-        $and: [
-          {
-            totalCount: {
-              $lte: maxCount,
-              $gte: minCount,
-            },
-          },
-        ],
+        totalCount: {
+          $lte: maxCount,
+          $gte: minCount,
+        },
       },
     },
     {
