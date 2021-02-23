@@ -1,8 +1,8 @@
 const record = require('../models/record');
 
-const getRecords = ({
+module.exports = function getRecords({
   startDate, endDate, minCount, maxCount,
-}) => {
+}) {
   const query = [
     {
       $match: {
@@ -37,8 +37,4 @@ const getRecords = ({
     },
   ];
   return record.aggregate(query);
-};
-
-module.exports = {
-  getRecords,
 };

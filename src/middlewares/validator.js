@@ -29,7 +29,7 @@ const recordValidationSchema = joi.object({
   maxCount: joi.number().positive().required().integer(),
 });
 
-const validateGetRecordRequestBody = async (req, res, next) => {
+module.exports = async function validateGetRecordRequestBody(req, res, next) {
   try {
     await recordValidationSchema.validateAsync(req.body, { abortEarly: false, convert: false });
     validateCountsOrder(req.body.minCount, req.body.maxCount);
@@ -38,8 +38,4 @@ const validateGetRecordRequestBody = async (req, res, next) => {
   } catch (err) {
     return badRequest(res, err.message);
   }
-};
-
-module.exports = {
-  validateGetRecordRequestBody,
 };
