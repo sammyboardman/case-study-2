@@ -1,6 +1,8 @@
-<h2 align="left">Case Study</h2>
+## Deployment
+This API has been deployed on AWS `http://getir.devprofile.io:3000/api/v1/fetch-records`
 
-### Stacks Used
+
+## Stacks Used
 
 * Node.js
 * Express.js
@@ -9,12 +11,13 @@
 * Docker - for containerization
 * AWS for deployment
 
+### Swagger Documentation
+GET `http://getir.devprofile.io:3000/api/v1/documentation/`
 
-### Endpoint
+## Endpoint
 - POST /fetch-records
 
-### How to Run Locally
-##### With Docker
+## How to Run With Docker
 _You need to have docker_
 > Clone Repo
 ```
@@ -33,15 +36,15 @@ $ npm run docker:start
 ```
 $ npm run docker:test
 ```
-### How to tail the running instance
+## How to tail the running instance
 ```
 $ npm run docker:tail
 ```
-### How to stop the running instance
+## How to stop the running instance
 ```
 $ npm run docker:stop
 ```
-##### Without Docker
+## Run Without Docker
 _ Node 10 > needs to be installed
 > Clone Repo
 ```
@@ -58,7 +61,7 @@ $ npm install
 $ npm start
 ```
 
-### How to run the test suite (integration)
+## How to run the test suite (unit and integration)
 1. Then run the test
 ```
 $ npm run test
@@ -93,8 +96,3 @@ Sample Error Response
     "issue": "endDate failed custom validation because The date format is invalid! It should be in this format \"YYYY-MM-DD\"" 
 }
 ```
-### Swagger Documentation
-GET `http://getir.devprofile.io:3000/api/v1/documentation/`
-
-### Deployment
-This API has been deployed on AWS (with docker) @ `http://getir.devprofile.io:3000/api/v1/fetch-records`
