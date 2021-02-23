@@ -1,5 +1,5 @@
 const { getRecords } = require('../services/record');
-const { ok, badRequest } = require('../utils/responseFormat');
+const { ok, badRequest } = require('../helpers/responseFormat');
 
 const getRecordsController = async (req, res) => {
   try {

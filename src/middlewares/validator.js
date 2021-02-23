@@ -1,5 +1,5 @@
 const joi = require('joi');
-const { badRequest } = require('../utils/responseFormat');
+const { badRequest } = require('../helpers/responseFormat');
 
 const validateCountsOrder = (minCount, maxCount) => {
   if (minCount > maxCount) {

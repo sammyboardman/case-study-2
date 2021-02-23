@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const config = require('config');
 const app = require('./app');
-require('./utils/dbConnect');
-const { logger } = require('./utils/logger');
+require('./lib/dbConnect');
+const { logger } = require('./lib/logger');
 const routeManager = require('./routes');
 
 routeManager(app);

@@ -1,6 +1,6 @@
 const { serve, setup } = require('swagger-ui-express');
-const { API_BASE_PATH } = require('../utils/constants');
-const { notFound } = require('../utils/responseFormat');
+const { API_BASE_PATH } = require('../helpers/constants');
+const { notFound } = require('../helpers/responseFormat');
 const { recordsRouter } = require('./record');
 const swaggerDoc = require('./swaggerDoc.json');
 

@@ -4,7 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const compression = require('compression');
 const rateLimit = require('express-rate-limit');
-const { logger } = require('./utils/logger');
+const { logger } = require('./lib/logger');
 
 const app = express();
 app.use(cors());
