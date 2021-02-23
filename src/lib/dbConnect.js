@@ -15,7 +15,7 @@ const dbConnect = async () => {
   } catch (error) {
     logger.log({
       level: 'error',
-      message: `Failed to connect to databse::::::::${error}`,
+      message: `Failed to connect to database::::::::${error}`,
     });
   }
 };
